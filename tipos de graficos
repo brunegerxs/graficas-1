@@ -1,0 +1,40 @@
+#investiga los diferentes tipos de graficos disponibles en  seaborn 
+---
+
+## 🎨 Tipos de Gráficos en Seaborn
+
+<details>
+<summary><b>📈 Gráficos Relacionales (Relación entre variables)</b></summary>
+
+*   **`scatterplot()`**: Puntos para ver correlaciones.
+*   **`lineplot()`**: Líneas para tendencias temporales.
+</details>
+
+<details>
+<summary><b>📊 Gráficos de Distribución (Cómo se reparten los datos)</b></summary>
+
+*   **`histplot()`**: Histogramas clásicos.
+*   **`kdeplot()`**: Curvas de densidad suavizadas.
+*   **`ecdfplot()`**: Distribución acumulativa.
+*   **`rugplot()`**: Marcas de datos en los ejes.
+</details>
+
+<details>
+<summary><b>🏷️ Gráficos Categóricos (Comparación por grupos)</b></summary>
+
+*   **Dispersión:** `stripplot()` y `swarmplot()`.
+*   **Distribución:** `boxplot()` (cajas) y `violinplot()` (violines).
+*   **Estimación:** `barplot()` (barras de promedio) y `countplot()` (conteo).
+</details>
+
+<details>
+<summary><b>🔥 Gráficos de Matriz y Especiales</b></summary>
+
+*   **`heatmap()`**: Mapas de calor (ideales para correlaciones).
+*   **`pairplot()`**: Grilla automática de todas las variables.
+*   **`jointplot()`**: Relación entre dos variables + sus histogramas.
+</details>
+
+> 💡 **Tip:** Para la mayoría de estos gráficos, puedes usar la función general `sns.relplot()`, `sns.displot()` o `sns.catplot()` cambiando el parámetro `kind`.
+
+---
