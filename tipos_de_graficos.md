@@ -42,3 +42,52 @@ Seaborn divide sus funciones en tres categorías principales. Usá esta guía r�
 | **Mapa de Calor** | `heatmap()` | Perfecto para ver correlaciones entre variables. |
 | **Pares** | `pairplot()` | Crea una matriz de gráficos de todo tu dataset de una. |
 
+# 📊 Manual Maestro de Seaborn: Gráficos y Parámetros
+
+Guía rápida para copiar y consultar los parámetros más importantes de las visualizaciones principales.
+
+---
+
+## 🚀 Gráficos Relacionales y de Distribución
+
+### 📍 Scatterplot (Puntos) & 🌊 KDE Plot (Densidad)
+
+
+| Gráfico | Parámetros Clave | Código de Ejemplo |
+| :--- | :--- | :--- |
+| **Scatter** | `x`, `y`, `hue` (color), `size` (tamaño), `style` (forma) | `sns.scatterplot(data=df, x="x", y="y", hue="cat")` |
+| **KDE** | `x`, `fill` (relleno), `bw_adjust` (suavizado), `alpha` | `sns.kdeplot(data=df, x="x", fill=True, alpha=0.5)` |
+
+---
+
+## 📦 Gráficos Categóricos (Comparación de Grupos)
+
+### 📦 Boxplot & 🎻 Violinplot
+
+
+| Gráfico | Parámetros Clave | Código de Ejemplo |
+| :--- | :--- | :--- |
+| **Boxplot** | `x`, `y`, `hue`, `palette`, `width`, `whis` (bigotes) | `sns.boxplot(data=df, x="cat", y="num", palette="Set1")` |
+| **Violin** | `x`, `y`, `hue`, `split` (mitades), `inner` (interior) | `sns.violinplot(data=df, x="cat", y="num", split=True)` |
+
+---
+
+### 📊 Barplot (Barras de Promedio)
+
+
+| Parámetro | Descripción |
+| :--- | :--- |
+| `estimator` | Cambia qué calcular (promedio, mediana, etc). |
+| `errorbar` | Controla las líneas de error sobre las barras. |
+| `orient` | `"h"` para barras horizontales o `"v"` para verticales. |
+
+```python
+# Ejemplo de Barras
+sns.barplot(data=tips, x="day", y="total_bill", hue="sex", palette="magma")
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Carga de datos base
+tips = sns.load_dataset("tips")
+
+
