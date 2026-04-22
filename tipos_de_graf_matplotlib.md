@@ -1,61 +1,6 @@
-📊 Guía Visual de Matplotlib: El Arte de los Datos
-Matplotlib es la biblioteca fundamental de visualización en Python. Para dominarla, es crucial saber qué gráfico elegir según la naturaleza de tus datos.
-Gráfico,Función Principal,Comando Base
-Gráfico de Barras,Comparar valores entre categorías discretas.,plt.bar()
-Barras Horizontales,Útil cuando los nombres de las categorías son largos.,plt.barh()
-Gráfico de Tarta,Mostrar proporciones de un total (usar con moderación).,plt.pie()
-2. Relación y Distribución
-Perfectos para entender cómo se comportan las variables y si existe una correlación entre ellas.
+📊 Visualización de Datos con MatplotlibEsta sección detalla los tipos de gráficos más potentes disponibles en la librería Matplotlib, clasificados por su intención analítica.🛠️ Tipos de Gráficos Disponibles1. Comparación de CategoríasIdeales para mostrar cómo se relacionan diferentes grupos entre sí.plt.bar() (Barras): El estándar para comparar magnitudes entre grupos.plt.barh() (Barras Horizontales): Perfecto cuando tienes muchas categorías o nombres muy largos.plt.stackplot() (Áreas Apiladas): Para ver cómo cambian las partes de un todo a lo largo del tiempo.2. Distribución y FrecuenciaPara entender la "forma" de tus datos y detectar valores extraños.plt.hist() (Histogramas): Muestra la distribución de una variable numérica continua.plt.boxplot() (Diagramas de Caja): Visualiza la mediana, los cuartiles y los outliers (valores atípicos).plt.violinplot() (Gráficos de Violín): Similar al boxplot, pero añade una curva de densidad para ver dónde hay más datos.3. Relación entre VariablesPara descubrir si una variable afecta a la otra.plt.scatter() (Dispersión): Cruza dos variables numéricas para ver si hay correlación (puntos).plt.hexbin() (Hexbinning): Una alternativa al scatter plot cuando tienes miles de puntos (evita el solapamiento).plt.contour() (Contornos): Para representar superficies 3D en un plano 2D.4. Series Temporales y Evoluciónplt.plot() (Líneas): El más usado para ver tendencias a través de los días, meses o años.plt.step() (Gráfico de Escalones): Útil para mostrar cambios que ocurren en intervalos discretos (como tasas de interés).🎨 Galería de Estilos RápidosMatplotlib permite cambiar todo el look con una sola línea de código. Prueba estos en tu notebook:EstiloComandoEfectoModernoplt.style.use('ggplot')Inspirado en la estética de R.Científicoplt.style.use('bmh')Bordes limpios y colores sobrios.Modo Oscuroplt.style.use('dark_background')Ideal para presentaciones nocturnas.Minimalistaplt.style.use('seaborn-v0_8-muted')Colores suaves y profesionales.💡 Pro-Tip para tu READMEPara que tus imágenes se vean increíbles en GitHub, usa siempre este código al final de tus gráficas:Python# Mejora el espaciado automático de los elementos
+plt.tight_layout()
 
-Dispersión (Scatter Plot)
-Se usa para identificar la relación entre dos variables numéricas.
-
-Comando: plt.scatter(x, y)
-
-Uso: Detectar agrupamientos (clusters) o tendencias.
-
-Histograma
-Muestra la frecuencia de una variable continua dividida en "bins" o intervalos.
-
-Comando: plt.hist(data)
-
-Uso: Ver si los datos siguen una distribución normal o tienen sesgo.
-
-3. Evolución Temporal (Series de Tiempo)
-Cuando el eje X representa el tiempo (segundos, días, años).
-
-Gráfico de Líneas (plt.plot()): Conecta puntos de datos para mostrar tendencias continuas. Es el gráfico por excelencia para ver el crecimiento de usuarios, precio de acciones o cambios de temperatura.
-
-4. Estadísticas Avanzadas
-Para análisis de datos más profundos y detección de valores atípicos.
-
-Boxplot (Diagrama de Caja): Resume la distribución a través de cuartiles y resalta los outliers.
-
-plt.boxplot(data)
-
-Violin Plot: Combina un boxplot con una estimación de densidad, mostrando dónde se concentran más los datos.
-
-plt.violinplot(data)
-
-🚀 Ejemplo de Código "Estético"
-Para que tus gráficos no se vean como de los años 90, usa estilos modernos:
-
-Python
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Configurar un estilo moderno
-plt.style.use('ggplot') 
-
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
-
-fig, ax = plt.subplots(figsize=(8, 4))
-ax.plot(x, y, label='Onda Senoidal', color='#3498db', linewidth=2)
-
-ax.set_title('Visualización Profesional en Matplotlib', fontsize=14)
-ax.set_xlabel('Tiempo (s)')
-ax.set_ylabel('Amplitud')
-ax.legend()
-
-plt.show()
+# Guarda con alta resolución (DPI 300) y fondo transparente
+plt.savefig('mi_grafica.png', dpi=300, transparent=True)
+📝 Notas de Implementación¿Por qué usar Matplotlib? Es la base de otras librerías como Seaborn. Aprender Matplotlib te da el control total sobre cada píxel de tu visualización, permitiendo una personalización que herramientas automáticas no ofrecen.
