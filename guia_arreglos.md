@@ -17,6 +17,9 @@ y = [10, 15, 7, 12, 9]
 
 plt.plot(x, y, color='blue', marker='o')
 plt.show()
+
+
+
 ## 📊 2. Gráfico de Barras (`plt.bar`)
 
 **Estructura:** Una lista de nombres y una de alturas.
